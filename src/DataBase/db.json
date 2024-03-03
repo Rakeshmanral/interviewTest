@@ -1,36 +1,14 @@
 {
   "todolist": [
     {
-      "id": "46b2",
-      "title": "First Tudo",
-      "description": "My program",
-      "duedate": "2023-12-12",
-      "pname": "Rakesh",
-      "select": {},
-      "priority": "medium",
-      "Status": "inprogress",
-      "Tags": "Tag2"
-    },
-    {
-      "id": "95e5",
-      "title": "dfgfsd",
-      "description": "dgf",
-      "duedate": "0055-04-05",
-      "pname": "bfdlsjb",
-      "select": {},
+      "id": "5c5c",
+      "title": "bv",
+      "description": "jbds",
+      "duedate": "2024-03-14",
+      "pname": "abc",
       "priority": "high",
-      "Status": "pending",
-      "Tags": "Tag1"
-    },
-    {
-      "id": "2522",
-      "title": "my task",
-      "description": "abc testing",
-      "duedate": "2022-10-05",
-      "pname": "Sanjay",
-      "priority": "low",
-      "Status": "completed",
-      "Tags": "Tag3"
+      "status": "inprogress",
+      "tags": "Tag1"
     }
   ]
 }

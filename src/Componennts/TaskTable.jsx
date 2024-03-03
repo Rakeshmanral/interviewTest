@@ -2,16 +2,33 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 const URL = "http://localhost:4200/todolist";
 const TaskTable = () => {
+
   const [data, setData] = useState([]);
-  const tbdata = async (item) => {
+  const tbdata = async () => {
     const response = await axios.get(URL);
     setData(response.data);
   };
 
+
+  const itemDelete = async(id)=>{
+    await axios.delete(`${URL}/${id}`).then(()=>{
+      console.log('delete Successfully');
+      tbdata()
+    }).catch((error)=>console.log(error.message))
+  }
+
+  // const itemEdit = async(id)=>{
+  //   await axios.get(`http://localhost:4200/todolist/${id}`).then(()=>{
+      
+  //     tbdata()
+  //   }).catch((error)=>console.log(error.message))
+  // }
+
+
+
   useEffect(() => {
     tbdata()
   }, []);
-  console.log(data);
 
   return (
     <>
@@ -25,9 +42,9 @@ const TaskTable = () => {
             <th scope="col">Status</th>
             <th scope="col">Assigned To</th>
             <th scope="col">Tags</th>
-            <th scope="col">Created Date</th>
+            {/* <th scope="col">Created Date</th>
             <th scope="col">Last Updated</th>
-            <th scope="col">Completion Date</th>
+            <th scope="col">Completion Date</th> */}
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -39,19 +56,19 @@ const TaskTable = () => {
                   <td>{item.title}</td>
                   <td>{item.description}</td>
                   <td>{item.duedate}</td>
-                  <td>{item.Status}</td>
+                  <td>{item.status}</td>
                   <td>{item.pname}</td>
-                  <td>{item.Tags}</td>
+                  <td>{item.tags}</td>
                   
+                  {/* <td></td>
                   <td></td>
-                  <td></td>
-                  <td></td>
+                  <td></td> */}
                   <td>{item.priority}</td>
                   <td>
-                    <button className="btn btn-primary">
-                      Delete <i className="fas fa-trash-alt"></i>
+                    <button className="btn btn-outline-danger mb-2 d-block" id={item.id} onClick={()=>itemDelete(item.id)}>
+                    <i class="bi bi-trash"></i> Delete
                     </button>
-                    <button className="btn btn-primary">
+                    <button className="btn btn-primary mb-2 d-block" id={item.id} onClick={()=>itemEdit(item.id)}>
                       Edit <i className="far fa-edit"></i>
                     </button>
                   </td>
