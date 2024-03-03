@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 const URL = "http://localhost:4200/todolist";
 const TaskTable = () => {
-
+const navigate = useNavigate()
   const [data, setData] = useState([]);
   const tbdata = async () => {
     const response = await axios.get(URL);
@@ -15,6 +16,10 @@ const TaskTable = () => {
       console.log('delete Successfully');
       tbdata()
     }).catch((error)=>console.log(error.message))
+  }
+
+  const itemEdit = (id)=>{
+    navigate('/editForm')
   }
 
   // const itemEdit = async(id)=>{

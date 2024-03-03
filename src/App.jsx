@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TaskForm from "./Componennts/TaskForm";
 import AddTask from './Componennts/AddTask';
+import EditTaskForm from './Componennts/EditTaskForm';
 function App() {
   return (
     <>
@@ -9,6 +10,7 @@ function App() {
           <Routes>
             <Route path="/" element={<AddTask />}/>
             <Route path="/taskform" element={<TaskForm />} />
+            <Route path="/editForm" element={<EditTaskForm />  } />
           </Routes>
         </BrowserRouter>
     </>
