@@ -28,7 +28,7 @@ function TaskForm() {
     <>
     <div className="align-items-center container d-flex flex-column justify-content-center py-4">
     <h1 className='mb-4 text-center'>Add Task</h1>
-    <div class="w-50 shadow-lg p-3 mb-5 bg-white rounded">
+    <div className="w-50 shadow-lg p-3 mb-5 bg-white rounded">
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group mb-3">
           <label htmlFor='title'>Title</label>
@@ -68,7 +68,7 @@ function TaskForm() {
           <select className="form-select mt-1" {...register("status", { required: true })}>
           <option value="">Select Status</option>
             <option value="pending">Pending</option>
-            <option value="inprogress">In progress</option>
+            <option value="in progress">In progress</option>
             <option value="completed">Completed</option>
           </select>
           {errors.Status && <span className="d-block mt-2 text-danger">This field is required</span>}
