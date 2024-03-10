@@ -45,20 +45,18 @@ function EditTaskForm() {
         })
     
       }
+
+      const backHome = ()=>{
+        navigate('/');
+      }
     
-      // Options for the select input
-      const options = [
-        { value: 'Tag1', label: 'Tag1' },
-        { value: 'Tag2', label: 'Tag2' },
-        { value: 'Tag3', label: 'Tag3' }
-      ];
 
 
 
     return (
         <>
             <div className="align-items-center container d-flex flex-column justify-content-center py-4">
-            <button className="btn btn-primary">Back Task List</button>
+            <button className="btn btn-primary" onClick={backHome}>Back Task List</button>
                 <h1 className='mb-4 text-center'>Update Task</h1>
                 <div className="w-50 shadow-lg p-3 mb-5 bg-white rounded">
                     <form onSubmit={handleSubmit(onSubmit)}>

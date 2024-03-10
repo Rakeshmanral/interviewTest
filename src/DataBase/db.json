@@ -30,7 +30,7 @@
       "description": "Good",
       "duedate": "2024-03-09",
       "pname": "Rakesh",
-      "priority": "Medium",
+      "priority": "medium",
       "tags": [
         "Tag2"
       ],
@@ -47,6 +47,54 @@
         "Tag3"
       ],
       "status": "completed"
+    },
+    {
+      "id": "5",
+      "title": "Title5",
+      "description": "Good",
+      "duedate": "2024-01-09",
+      "pname": "Rohan",
+      "priority": "low",
+      "tags": [
+        "Tag3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "6",
+      "title": "Title6",
+      "description": "High",
+      "duedate": "2024-03-09",
+      "pname": "Ram",
+      "priority": "high",
+      "tags": [
+        "Tag3"
+      ],
+      "status": "inprogress"
+    },
+    {
+      "id": "7",
+      "title": "Title7",
+      "description": "Good",
+      "duedate": "2024-03-09",
+      "pname": "Rakesh",
+      "priority": "medium",
+      "tags": [
+        "Tag2"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "8",
+      "title": "Title8",
+      "description": "Good",
+      "duedate": "2024-03-09",
+      "pname": "Raman",
+      "priority": "high",
+      "tags": [
+        "Tag3"
+      ],
+      "status": "pending"
     }
   ]
 }

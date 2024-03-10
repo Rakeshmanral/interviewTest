@@ -90,23 +90,8 @@ const TaskTable = () => {
           />
         </div>
       </div> */}
-<div className="filters">
-                <label>Status:</label>
-                <select className="form-control" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
-                    <option value="">All</option>
-                    <option value="in progress">In Progress</option>
-                    <option value="pending">Pending</option>
-                    <option value="completed">Completed</option>
-                </select>
-
-                <label>Priority:</label>
-                <select className="form-control" value={priorityFilter} onChange={(e) => setPriorityFilter(e.target.value)}>
-                    <option value="">All</option>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                </select>
-
+<div className="filters row mb-4">
+<div className="col-sm-4 col-12">
                 <label>Search:</label>
                 <input className="form-control"
                     type="text"
@@ -114,6 +99,26 @@ const TaskTable = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by title or description"
                 />
+                </div>
+  <div className="col-sm-4 col-12">
+                <label>Status:</label>
+                <select className="form-control" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
+                    <option value="">All</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+                </div>
+                <div className="col-sm-4 col-12">
+                <label>Priority:</label>
+                <select className="form-control" value={priorityFilter} onChange={(e) => setPriorityFilter(e.target.value)}>
+                    <option value="">All</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                </div>
+         
             </div>
       <table className="table table-bordered">
         <thead>

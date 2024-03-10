@@ -71,7 +71,7 @@ function TaskForm() {
             <option value="in progress">In progress</option>
             <option value="completed">Completed</option>
           </select>
-          {errors.Status && <span className="d-block mt-2 text-danger">This field is required</span>}
+          {errors.status && <span className="d-block mt-2 text-danger">This field is required</span>}
         </div>
         <div className="form-group mb-3">
           <label htmlFor="assignedto">Assigned To</label>
@@ -86,7 +86,7 @@ function TaskForm() {
             <option value="Tag2">Tag2</option>
             <option value="Tag3">Tag3</option>
           </select>
-          {errors.Tags && <span className="d-block mt-2 text-danger">This field is required</span>}
+          {errors.tags && <span className="d-block mt-2 text-danger">This field is required</span>}
         </div>
       <button type="submit" className="btn btn-primary mt-3">Submit Task</button>
     </form>
