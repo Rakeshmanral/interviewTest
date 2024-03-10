@@ -3,7 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
-const URL = "http://localhost:4200/todolist"
+const URL = "https://interview-test-project.glitch.me/todolist"
 
 function EditTaskForm() {
     
@@ -35,7 +35,6 @@ function EditTaskForm() {
 
 
       const onSubmit = async (data, id) => {
-        console.log('hey i am connected ');
         await axios.put(`${URL}/${Id}`, data).then((res) => {
           toast.success("Edited")
           navigate('/')

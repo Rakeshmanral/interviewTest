@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-const URL = "http://localhost:4200/todolist";
+const URL = "https://interview-test-project.glitch.me/todolist";
 const TaskTable = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -29,26 +29,27 @@ const TaskTable = () => {
   const filterTasks = (tasks) => {
     let filteredTasks = tasks;
     if (statusFilter) {
-        filteredTasks = filteredTasks.filter(task => task.task_status === statusFilter);
+        filteredTasks = filteredTasks.filter(task => task.status === statusFilter);
     }
     if (priorityFilter) {
-        filteredTasks = filteredTasks.filter(task => task.task_priority === priorityFilter);
+        filteredTasks = filteredTasks.filter(task => task.priority === priorityFilter);
     }
     if (searchQuery) {
       filteredTasks = filteredTasks.filter(task =>
-          task.task_title.toLowerCase().includes(searchQuery.toLowerCase())
+          task.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
   }
+  console.log(filteredTasks)
     return filteredTasks;
 }
   const itemEdit = async (id) => {
     navigate(`/editForm/${id}`)
   };
 
+ 
   useEffect(() => {
     tbdata();
   }, []);
-
   return (
     <>
 
@@ -95,23 +96,22 @@ const TaskTable = () => {
                 <label>Search:</label>
                 <input className="form-control"
                     type="text"
-                    value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by title or description"
                 />
                 </div>
   <div className="col-sm-4 col-12">
                 <label>Status:</label>
-                <select className="form-control" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
+                <select className="form-control" onChange={(e) => setStatusFilter(e.target.value)}>
                     <option value="">All</option>
-                    <option value="in progress">In Progress</option>
+                    <option value="inprogress">In Progress</option>
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
                 </select>
                 </div>
                 <div className="col-sm-4 col-12">
                 <label>Priority:</label>
-                <select className="form-control" value={priorityFilter} onChange={(e) => setPriorityFilter(e.target.value)}>
+                <select className="form-control"  onChange={(e) => setPriorityFilter(e.target.value)}>
                     <option value="">All</option>
                     <option value="high">High</option>
                     <option value="medium">Medium</option>

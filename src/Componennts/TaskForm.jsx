@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-const URL = "http://localhost:4200/todolist"
+const URL = "https://interview-test-project.glitch.me/todolist"
 
 function TaskForm() {
   const navigate = useNavigate()
