@@ -68,7 +68,7 @@ function TaskForm() {
           <select className="form-select mt-1" {...register("status", { required: true })}>
           <option value="">Select Status</option>
             <option value="pending">Pending</option>
-            <option value="in progress">In progress</option>
+            <option value="inprogress">In progress</option>
             <option value="completed">Completed</option>
           </select>
           {errors.status && <span className="d-block mt-2 text-danger">This field is required</span>}
