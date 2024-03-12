@@ -45,17 +45,11 @@ function EditTaskForm() {
     
       }
 
-      const backHome = ()=>{
-        navigate('/');
-      }
-    
-
 
 
     return (
         <>
             <div className="align-items-center container d-flex flex-column justify-content-center py-4">
-            <button className="btn btn-primary" onClick={backHome}>Back Task List</button>
                 <h1 className='mb-4 text-center'>Update Task</h1>
                 <div className="w-50 shadow-lg p-3 mb-5 bg-white rounded">
                     <form onSubmit={handleSubmit(onSubmit)}>

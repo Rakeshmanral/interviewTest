@@ -6,9 +6,9 @@ const URL = "https://interview-test-project.glitch.me/todolist";
 const TaskTable = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [statusFilter, setStatusFilter] = useState("");
-  const [priorityFilter, setPriorityFilter] = useState("");
-  const [searchQuery, setSearchQuery] = useState(''); // State for search query
+  const [statusFltr, setStatusFltr] = useState("");
+  const [priorityFltr, setPriorityFltr] = useState("");
+  const [searchData, setSearchData] = useState(''); // State for search query
   const tbdata = async () => {
     const response = await axios.get(URL);
     setData(response.data);
@@ -26,21 +26,20 @@ const TaskTable = () => {
 
 
 
-  const filterTasks = (tasks) => {
-    let filteredTasks = tasks;
-    if (statusFilter) {
-        filteredTasks = filteredTasks.filter(task => task.status === statusFilter);
+  const filteredDatas = (todos) => {
+    let filteredDatas = todos;
+    if (statusFltr) {
+        filteredDatas = filteredDatas.filter(todos => todos.status === statusFltr);
     }
-    if (priorityFilter) {
-        filteredTasks = filteredTasks.filter(task => task.priority === priorityFilter);
+    if (priorityFltr) {
+        filteredDatas = filteredDatas.filter(todos => todos.priority === priorityFltr);
     }
-    if (searchQuery) {
-      filteredTasks = filteredTasks.filter(task =>
-          task.title.toLowerCase().includes(searchQuery.toLowerCase())
+    if (searchData) {
+      filteredDatas = filteredDatas.filter(todos =>
+        todos.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
   }
-  console.log(filteredTasks)
-    return filteredTasks;
+    return filteredDatas;
 }
   const itemEdit = async (id) => {
     navigate(`/editForm/${id}`)
@@ -96,13 +95,13 @@ const TaskTable = () => {
                 <label>Search:</label>
                 <input className="form-control"
                     type="text"
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search by title or description"
+                    onChange={(e) => setSearchData(e.target.value)}
+                    placeholder="Search by title"
                 />
                 </div>
   <div className="col-sm-4 col-12">
                 <label>Status:</label>
-                <select className="form-control" onChange={(e) => setStatusFilter(e.target.value)}>
+                <select className="form-control" onChange={(e) => setStatusFltr(e.target.value)}>
                     <option value="">All</option>
                     <option value="inprogress">In Progress</option>
                     <option value="pending">Pending</option>
@@ -111,7 +110,7 @@ const TaskTable = () => {
                 </div>
                 <div className="col-sm-4 col-12">
                 <label>Priority:</label>
-                <select className="form-control"  onChange={(e) => setPriorityFilter(e.target.value)}>
+                <select className="form-control"  onChange={(e) => setPriorityFltr(e.target.value)}>
                     <option value="">All</option>
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
@@ -133,7 +132,7 @@ const TaskTable = () => {
           </tr>
         </thead>
         <tbody>
-          {filterTasks(data).map((item, index) => {
+          {filteredDatas(data).map((item, index) => {
               return (
                 <tr key={index}>
                   <th scope="row">{index + 1}</th>
