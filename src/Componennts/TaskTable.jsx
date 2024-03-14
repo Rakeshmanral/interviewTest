@@ -122,8 +122,10 @@ const TaskTable = () => {
                   </td>
                 </tr>
               );
-            })}
-            
+            })} 
+            <tr>
+            {filteredDatas(data).length==0 && "Data Not found"}
+            </tr>
         </tbody>
       </table>
     </>
