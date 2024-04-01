@@ -22,8 +22,6 @@ function TaskForm() {
     navigate('/')
   }
 
-  
-  
   return (
     <>
     <div className="align-items-center container d-flex flex-column justify-content-center py-4">
